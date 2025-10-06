@@ -1,0 +1,32 @@
+@font-face {
+
+    font-family: 'IRANSansWeb(FaNum)';
+    src: url('Iran_Sans/IRANSansWeb(FaNum).otf');
+    src: url('Iran_Sans/IRANSansWeb(FaNum).otf?#iefix') format('embedded-opentype'),
+    url('Iran_Sans/IRANSansWeb(FaNum).woff') format('woff'),
+    url('Iran_Sans/IRANSansWeb(FaNum).eot') format('eot'),
+    url('Iran_Sans/IRANSansWeb(FaNum).woff2') format('woff2'),
+    url('Iran_Sans/IRANSansWeb(FaNum).ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+
+    font-family: 'Open Sans';
+    src: url('Open_Sans/OpenSans-Bold.ttf');
+    src: url('Open_Sans/OpenSans-BoldItalic.ttf');
+    src: url('Open_Sans/OpenSans-ExtraBold.ttf');
+    src: url('Open_Sans/OpenSans-ExtraBoldItalic.ttf');
+    src: url('Open_Sans/OpenSans-Italic.ttf');
+    src: url('Open_Sans/OpenSans-Light.ttf');
+    src: url('Open_Sans/OpenSans-LightItalic.ttf');
+    src: url('Open_Sans/OpenSans-Medium.ttf');
+    src: url('Open_Sans/OpenSans-MediumItalic.ttf');
+    src: url('Open_Sans/OpenSans-Regular.ttf');
+    src: url('Open_Sans/OpenSans-SemiBold.ttf');
+    /* src: url('Open_Sans/OpenSans-SemiBoldItalic.ttf'); */
+    font-weight: normal;
+    font-style: normal;
+  }
+
