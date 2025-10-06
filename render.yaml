@@ -1,0 +1,52 @@
+services:
+  # Web Service
+  - type: web
+    name: dimmaf-web
+    env: php
+    plan: starter
+    buildCommand: |
+      composer install --no-dev --optimize-autoloader
+      php artisan key:generate
+      php artisan config:cache
+      php artisan route:cache
+      php artisan view:cache
+    startCommand: |
+      php artisan migrate --force
+      php artisan db:seed --force
+      php artisan serve --host=0.0.0.0 --port=$PORT
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: LOG_CHANNEL
+        value: stderr
+      - key: DB_CONNECTION
+        value: pgsql
+      - key: DB_HOST
+        fromDatabase:
+          name: dimmaf-db
+          property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: dimmaf-db
+          property: port
+      - key: DB_DATABASE
+        fromDatabase:
+          name: dimmaf-db
+          property: database
+      - key: DB_USERNAME
+        fromDatabase:
+          name: dimmaf-db
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: dimmaf-db
+          property: password
+
+  # PostgreSQL Database
+  - type: pgsql
+    name: dimmaf-db
+    plan: starter
+    databaseName: dimmaf
+    user: dimmaf_user
